@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=stars" />
+  <title>Delta3D</title>
+</head>
+<body>
+
+  <div class="navbar">
+
+    <p class="logo">Delta<span>3D</span></p>
+  
+    <div>
+  
+    <p>Items</p>
+    <p>Contact</p>
+    <p>About</p>
+  
+    </div>
+  
+  </div>
+
+<div id="content">
+
+  <div class="items">
+  
+    <div class="container popular">
+    <h1>Fidget Joystick</h1>
+    <pop>$0.50</pop>
+    <button onclick="checkout(1)">Buy</button>
+    </div>
+  
+    <div class="container">
+    <h1>Propeller Launcher</h1>
+    <pop>$1.00</pop>
+    <button onclick="checkout(2)">Buy</button>
+    </div>
+  
+    <div class="container">
+    <h1>Dummy 13</h1>
+    <pop>$2.50</pop>
+    <button onclick="checkout(3)">Buy</button>
+    </div>
+  
+    <div class="container">
+    <h1>Turbine Whistle</h1>
+    <pop>$2.00</pop>
+    <button onclick="checkout(4)">Buy</button>
+    </div>
+  
+  </div>
+
+</div>
+
+<div id="checkout" style="display: none;">
+  <h1 id="itemName" style="margin-bottom: 0px;"></h1>
+  <pop style="margin-top: 0%;" id="itemPrice"></pop>
+  <br>
+  <br>
+  <label for="color">Color</label>
+  <select id="color" name="color">
+    <option value="DarkBlue">Dark Blue</option>
+    <option value="LightBlue">Light Blue</option>
+    <option value="DarkBlueTransparent">Transparent Dark Blue</option>
+    <option value="WhiteTransparent">Transparent White</option>
+    <option value="LimeGreen">Lime Green</option>
+    <option value="Yellow">Yellow</option>
+    <option value="Orange">Orange</option>
+    <option value="Peach">Peach</option>
+    <option value="Pink">Pink</option>
+    <option value="Black">Black</option>
+  </select>
+  <br>
+  <br>
+  First Name <input id="firstName">
+  <br>
+  Last Name <input id="lastName">
+
+  <p style="margin-bottom: 2px;">Additional Information</p>
+  <textarea id="additionalInfo"></textarea>
+  <br>
+  <button onclick="send()">Place Order</button>
+  <p style="font-size: 10px;"><span style="color: red;">*</span>Orders must be paid with legal tender</p>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

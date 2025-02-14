@@ -1,0 +1,202 @@
+body {
+    margin: 0px;
+    font-family: Montserrat;
+}
+.logo {
+    margin-top: 20px;
+    color: #393D3F;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.logo span {
+    color: rgb(0, 119, 255);
+}
+.navbar {
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.navbar div {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.navbar div p {
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    font-size: 15px;
+    color: #0D0F1C;
+    transition: .5s;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar div p:hover {
+    color: #999999;
+}
+.items {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.container h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #0D0F1C;
+}
+.container {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #bdbdbd;
+}
+.popular {
+    border: 2px solid #ffd500;
+    position: relative;
+}
+
+.popular::before {
+    content: "Popular";
+    position: absolute;
+    top: 10%;
+    left: calc(100% - 68px);
+    background-color: #ffd500;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.sale {
+    border: 2px solid #00ff4c;
+    position: relative;
+}
+
+.sale::before {
+    content: "Sale";
+    position: absolute;
+    top: 10%;
+    left: calc(100% - 46.5px);
+    background-color: #00ff4c;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.container button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-right: -10px;
+    border: none;
+    background-color: rgb(0, 119, 255);
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: .5s;
+}
+button:hover {
+    filter: brightness(0.9);
+}
+#checkout {
+    animation: fadeIn .4s;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #bdbdbd;
+    background-color: #f4f4f4;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-family: Montserrat;
+}
+
+select:hover {
+    border-color: rgb(0, 119, 255);
+}
+input {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #bdbdbd;
+    background-color: #f4f4f4;
+    color: #333;
+    outline: none;
+    transition: .5s;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+}
+input:focus {
+    border-color: rgb(0, 119, 255);
+}
+textarea {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #bdbdbd;
+    background-color: #f4f4f4;
+    color: #333;
+    outline: none;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+    transition: border-color .5s;
+}
+textarea:focus {
+    border-color: rgb(0, 119, 255);
+}
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-right: -10px;
+    border: none;
+    background-color: rgb(0, 119, 255);
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: .5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
