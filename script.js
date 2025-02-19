@@ -1,31 +1,36 @@
-let ItemSelected = null;
-let colorSelected = null;
-let Cost = null;
-let firstName = null;
-let lastName = null;
+let ItemSelected;
+let colorSelected;
+let Cost;
+let firstName;
+let lastName;
 function checkout(item) {
     switch (item) {
         case 1:
             ItemSelected = "Fidget Joystick";
-            Cost = "$0.50";
-            hideContent();
+            Cost = "$1.00";
         break;
         case 2:
-            ItemSelected = "Propeller Launcher";
-            Cost = "$1.00";
-            hideContent();
+            ItemSelected = "Turbine Whistle";
+            Cost = "$0.50";
         break;
         case 3:
-            ItemSelected = "Dummy 13";
-            Cost = "$2.50";
-            hideContent();
+            ItemSelected = "Desk Catapult";
+            Cost = "$1.50";
         break;
         case 4:
-            ItemSelected = "Turbine Whistle";
-            Cost = "$2.00";
-            hideContent();
+            ItemSelected = "Dummy 13";
+            Cost = "$2.50";
+        break;
+        case 5:
+            ItemSelected = "Squish Fidget";
+            Cost = "$1.25";
+        break;
+        case 6:
+            ItemSelected = "Fidget Clicker";
+            Cost = "$1.50";
         break;
     }
+    hideContent();
 }
 
 function hideContent() {
@@ -45,9 +50,8 @@ function init() {
     }
 }
 init();
+
 function send() {
-    const randomNumber = btoa(Math.floor(Math.random() * 1000000));
-    if (prompt(`CAPTCHA\nEnter to verify : ${randomNumber}`) == randomNumber) {
         colorSelected = document.getElementById('color').value;
         firstName = document.getElementById('firstName').value;
         lastName = document.getElementById('lastName').value;
@@ -62,10 +66,9 @@ function send() {
     }, function(error) {
        console.log('Email failed to send : ', error);
     });
-    } else {
-        alert("Verification Failed")
-    }
-
-
-    
+    document.getElementById('placeorder').innerText = 'Order Placed!';
+    setTimeout(() => {
+        document.getElementById('placeorder').innerText = 'Place Order';
+        window.location.reload();
+    }, 1000);
 }
