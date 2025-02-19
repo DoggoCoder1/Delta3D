@@ -12,13 +12,12 @@
 
   <div class="navbar">
 
-    <p class="logo">Delta<span>3D</span></p>
+    <p class="logo" onclick="location.reload()" style="cursor: pointer;">Delta<span>3D</span></p>
   
     <div>
   
-    <p>Items</p>
+    <p onclick="document.getElementById('content').style.display = 'block'; document.getElementById('checkout').style.display = 'none';">Items</p>
     <p>Contact</p>
-    <p>About</p>
   
     </div>
   
@@ -28,32 +27,45 @@
 
   <div class="items">
   
-    <div class="container popular">
+  <div class="container popular">
     <h1>Fidget Joystick</h1>
-    <pop>$0.50</pop>
-    <button onclick="checkout(1)">Buy</button>
-    </div>
-  
-    <div class="container">
-    <h1>Propeller Launcher</h1>
     <pop>$1.00</pop>
-    <button onclick="checkout(2)">Buy</button>
-    </div>
-  
-    <div class="container">
-    <h1>Dummy 13</h1>
-    <pop>$2.50</pop>
-    <button onclick="checkout(3)">Buy</button>
-    </div>
-  
-    <div class="container">
-    <h1>Turbine Whistle</h1>
-    <pop>$2.00</pop>
-    <button onclick="checkout(4)">Buy</button>
-    </div>
-  
+    <button onclick="checkout(1)">Buy</button>
   </div>
 
+  <div class="container">
+    <h1>Turbine Whistle</h1>
+    <pop>$0.50</pop>
+    <button onclick="checkout(2)">Buy</button>
+  </div>
+
+  <div class="container">
+    <h1>Desk Catapult</h1>
+    <pop>$1.50</pop>
+    <button onclick="checkout(3)">Buy</button>
+  </div>
+
+  <div class="container">
+    <h1>Dummy 13</h1>
+    <pop>$2.50</pop>
+    <button onclick="checkout(4)">Buy</button>
+  </div>
+
+  <div class="container">
+    <h1>Squish Fidget</h1>
+    <pop>$1.25</pop>
+    <button onclick="checkout(5)">Buy</button>
+  </div>
+
+  <div class="container">
+    <h1>Fidget Clicker</h1>
+    <pop>$1.50</pop>
+    <button onclick="checkout(6)">Buy</button>
+  </div>
+
+    
+  
+  </div>
 </div>
 
 <div id="checkout" style="display: none;">
@@ -83,8 +95,8 @@
   <p style="margin-bottom: 2px;">Additional Information</p>
   <textarea id="additionalInfo"></textarea>
   <br>
-  <button onclick="send()">Place Order</button>
-  <p style="font-size: 10px;"><span style="color: red;">*</span>Orders must be paid with legal tender</p>
+  <button onclick="send()" id="placeorder">Place Order</button>
+  <p id="orderPlaced" style="display: none; color: lime;">Order placed!</p>
 </div>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
