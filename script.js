@@ -29,6 +29,10 @@ function checkout(item) {
             ItemSelected = "Fidget Clicker";
             Cost = "$1.50";
         break;
+        case 7:
+            ItemSelected = "Custom Order";
+            Cost = "None"
+        break;
     }
     hideContent();
 }
@@ -37,7 +41,16 @@ function hideContent() {
     document.getElementById('content').style.display = 'none';
     document.getElementById('checkout').style.display = 'block';
     document.getElementById('itemName').innerHTML = ItemSelected;
-    document.getElementById('itemPrice').innerHTML = Cost;
+    if (ItemSelected === "Custom Order") {
+        document.getElementById('itemPrice').innerHTML = "Price may vary";
+        document.getElementById('modelLink').style.display = "inline";
+        document.getElementById('modelContainer').style.display = "block";
+    } else {
+        document.getElementById('itemPrice').innerHTML = Cost;
+        document.getElementById('modelLink').style.display = "none";
+        document.getElementById('modelContainer').style.display = "none";
+    }
+    
 }
 
 
@@ -60,6 +73,7 @@ function send() {
         note: document.getElementById('additionalInfo').value,
         item: ItemSelected,
         color: colorSelected,
+        model: document.getElementById('modelLink').value,
     })
     .then(function(response) {
        console.log('Email Sent!', response.status, response.text);
