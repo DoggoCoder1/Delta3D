@@ -15,7 +15,9 @@ body {
     cursor: default;
 }
 .logo span {
-    color: rgb(0, 119, 255);
+    background: linear-gradient(to right, rgb(0, 119, 255), rgb(0, 85, 255));
+    -webkit-background-clip: text;
+    color: transparent;
 }
 .navbar {
     color: black;
@@ -85,14 +87,13 @@ body {
 }
 
 .popular::before {
-    content: "Popular";
+    content: "Popular!";
     position: absolute;
     top: 10%;
     left: calc(100% - 68px);
     background-color: #ffd500;
     color: white;
     padding: 2px 10px;
-    border-radius: 5px 0px 0px 5px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -191,12 +192,13 @@ button {
     margin-bottom: -10px;
     margin-right: -10px;
     border: none;
-    background-color: rgb(0, 119, 255);
+    background: linear-gradient(to right, rgb(0, 119, 255), rgb(0, 85, 255));
     color: white;
     border-radius: 100px;
     cursor: pointer;
     align-self: flex-end;
     transition: .5s;
+    font-family: Montserrat;
 }
 #orderPlaced {
     animation: fadeIn .4s;
@@ -236,11 +238,38 @@ button {
 #homeContent p {
     text-align: left;
 }
-
+å
 #homeContent .container {
     margin-right: 20px;
     margin-left: 20px;
     padding: 5px;
     padding-left: 10px;
     border-radius: 1vw;
+}
+
+#contact {
+    display: none;
+    animation: fadeIn .4s;
+}
+
+#contact h1 {
+    text-align: left;
+    margin-top: 120px;
+    margin-left: 50px;
+    font-size: 50px;
+    width: 100%;
+    color: rgb(80, 225, 114); 
+    margin-bottom: 0px;
+}
+
+#contact p {
+    text-align: left;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #556bff;
+    font-weight: bold;
 }
