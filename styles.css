@@ -210,5 +210,37 @@ button {
     }
 }
 #content {
+    display: none;
     animation: fadeIn .4s;
+}
+.custom {
+    background: #C4E7D4;
+    border: solid 1px #9ABCA9;
+}
+#homeContent {
+    display: block;
+    animation: fadeIn .4s;
+}
+
+#homeContent h1 {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 50px;
+    width: 100%;
+    background: linear-gradient(to right, red, yellow);
+    -webkit-background-clip: text;
+    color: transparent; 
+    margin-bottom: 0px;
+}
+
+#homeContent p {
+    text-align: left;
+}
+
+#homeContent .container {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 1vw;
 }
