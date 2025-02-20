@@ -33,6 +33,10 @@ function checkout(item) {
             ItemSelected = "Custom Order";
             Cost = "None"
         break;
+        case 8:
+            ItemSelected = "Impossible Cone";
+            Cost = "$1.25"
+        break;
     }
     hideContent();
 }
