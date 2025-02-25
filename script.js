@@ -61,7 +61,7 @@ function hideContent() {
 
 function init() {
     try {
-        emailjs.init('C1BlBKjVX-rkLsRcM');
+        emailjs.init('drGjbjy37aAZ25Yu1');
     } catch (error) {
         console.error('Error occurred while sending email:', error);
     }
@@ -72,7 +72,7 @@ function send() {
         colorSelected = document.getElementById('color').value;
         firstName = document.getElementById('firstName').value;
         lastName = document.getElementById('lastName').value;
-        emailjs.send('service_qqf5p4q', 'template_ttckj0c', {
+        emailjs.send('service_iob9a3n', 'template_jzqsi9o', {
         sender: `${firstName} ${lastName}`,
         note: document.getElementById('additionalInfo').value,
         item: ItemSelected,
