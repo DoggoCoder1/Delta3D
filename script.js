@@ -67,12 +67,18 @@ function init() {
     }
 }
 init();
+let isRateLimited = false;
 
 function send() {
-        colorSelected = document.getElementById('color').value;
-        firstName = document.getElementById('firstName').value;
-        lastName = document.getElementById('lastName').value;
-        emailjs.send('service_iob9a3n', 'template_jzqsi9o', {
+    if (isRateLimited) {
+        alert('Please wait 30 seconds before placing another order.');
+        return;
+    }
+
+    colorSelected = document.getElementById('color').value;
+    firstName = document.getElementById('firstName').value;
+    lastName = document.getElementById('lastName').value;
+    emailjs.send('service_iob9a3n', 'template_jzqsi9o', {
         sender: `${firstName} ${lastName}`,
         note: document.getElementById('additionalInfo').value,
         item: ItemSelected,
@@ -84,9 +90,28 @@ function send() {
     }, function(error) {
        console.log('Email failed to send : ', error);
     });
+
     document.getElementById('placeorder').innerText = 'Order Placed!';
     setTimeout(() => {
         document.getElementById('placeorder').innerText = 'Place Order';
         window.location.reload();
     }, 1000);
+
+    isRateLimited = true;
+    localStorage.setItem('rateLimited', 'true');
+    setTimeout(() => {
+        isRateLimited = false;
+        localStorage.removeItem('rateLimited');
+    }, 30000); // 30 seconds
+}
+
+window.onload = function() {
+    if (localStorage.getItem('rateLimited') === 'true') {
+        isRateLimited = true;
+        setTimeout(() => {
+            isRateLimited = false;
+            localStorage.removeItem('rateLimited');
+        }, 30000 - (Date.now() - parseInt(localStorage.getItem('rateLimitedTime'))));
+    }
+    localStorage.setItem('rateLimitedTime', Date.now());
 }
