@@ -17,9 +17,8 @@
   
     <div>
   
-    <p onclick="document.getElementById('contact').style.display = 'none'; document.getElementById('homeContent').style.display = 'block'; document.getElementById('content').style.display = 'none'; document.getElementById('checkout').style.display = 'none';">Home</p>
-    <p onclick="document.getElementById('contact').style.display = 'none'; document.getElementById('homeContent').style.display = 'none'; document.getElementById('content').style.display = 'block'; document.getElementById('checkout').style.display = 'none';">Items</p>
-    <p onclick="document.getElementById('contact').style.display = 'block'; document.getElementById('homeContent').style.display = 'none'; document.getElementById('content').style.display = 'none'; document.getElementById('checkout').style.display = 'none';">Contact</p>
+    <p onclick="document.getElementById('homeContent').style.display = 'block'; document.getElementById('content').style.display = 'none'; document.getElementById('checkout').style.display = 'none';">Home</p>
+    <p onclick="document.getElementById('homeContent').style.display = 'none'; document.getElementById('content').style.display = 'block'; document.getElementById('checkout').style.display = 'none';">Items</p>
   
     </div>
   
@@ -28,23 +27,10 @@
 
   <h1 id="homeHeader">Quick Toy Printing</h1>
 
-  <p style="text-align: center;">Check out our selection of toys</p>
+  <p style="text-align: center; margin-top: 5px;">Delta3D offers quick 3d printing services for any needs! Checkout our selection of items in the <a onclick="document.getElementById('homeContent').style.display = 'none'; document.getElementById('content').style.display = 'block'; document.getElementById('checkout').style.display = 'none';" style="cursor: pointer;">Shop</a>.</p>
   <div style="text-align: center; margin-top: 0px;">
     <button style="margin-top: 0px;" onclick="document.getElementById('homeContent').style.display = 'none'; document.getElementById('content').style.display = 'block'; document.getElementById('checkout').style.display = 'none';">Shop</button>
   </div>
-
-</div>
-
-<div id="contact">
-
-  <h1>Contact</h1>
-  <p>Have a question or need to contact us?</p>
-
-  <br>
-
-  <p><a href="mailto:Delta3dtoys@gmail.com">Delta3DToys@gmail.com</a></p>
-
-  <p></p>
 
 </div>
 
@@ -58,10 +44,15 @@
       <button onclick="checkout(7)">Buy</button>
   </div>
 
+  <div class="container new">
+    <h1>BuzzBox 1</h1>
+    <pop>$2.50</pop>
+    <button onclick="checkout(9)">Buy</button>
+  </div>
+
   <div class="container popular">
     <h1>Fidget Joystick</h1>
     <pop>$1.00</pop>
-    <img src="">
     <button onclick="checkout(1)">Buy</button>
   </div>
 
