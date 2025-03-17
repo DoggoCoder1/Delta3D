@@ -71,7 +71,7 @@ let isRateLimited = false;
 
 function send() {
     if (isRateLimited) {
-        alert('Please wait 30 seconds before placing another order.');
+        alert('Please wait 5 minutes before placing another order.');
         return;
     }
 
@@ -102,7 +102,7 @@ function send() {
     setTimeout(() => {
         isRateLimited = false;
         localStorage.removeItem('rateLimited');
-    }, 30000); // 30 seconds
+    }, 300000); // 30 seconds
 }
 
 window.onload = function() {
@@ -111,7 +111,7 @@ window.onload = function() {
         setTimeout(() => {
             isRateLimited = false;
             localStorage.removeItem('rateLimited');
-        }, 30000 - (Date.now() - parseInt(localStorage.getItem('rateLimitedTime'))));
+        }, 300000 - (Date.now() - parseInt(localStorage.getItem('rateLimitedTime'))));
     }
     localStorage.setItem('rateLimitedTime', Date.now());
 }
