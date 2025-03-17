@@ -229,7 +229,7 @@ button {
     margin-top: 120px;
     font-size: 50px;
     width: 100%;
-    background: linear-gradient(to right, red, yellow);
+    background: black;
     -webkit-background-clip: text;
     color: transparent; 
     margin-bottom: 0px;
