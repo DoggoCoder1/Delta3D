@@ -37,6 +37,14 @@ function checkout(item) {
             ItemSelected = "Impossible Cone";
             Cost = "$1.25"
         break;
+        case 9:
+            ItemSelected = "BuzzBox 1";
+            Cost = "$2.50"
+        break;
+        default:
+            ItemSelected = "Unknown Product";
+            Cost = "Unknown Product"
+        break;
     }
     hideContent();
 }
@@ -61,7 +69,7 @@ function hideContent() {
 
 function init() {
     try {
-        emailjs.init('C1BlBKjVX-rkLsRcM');
+        emailjs.init('drGjbjy37aAZ25Yu1');
     } catch (error) {
         console.error('Error occurred while sending email:', error);
     }
@@ -71,14 +79,19 @@ let isRateLimited = false;
 
 function send() {
     if (isRateLimited) {
-        alert('Please wait 5 minutes before placing another order.');
+        alert('Please wait 30 seconds before placing another order.');
         return;
     }
+    
 
     colorSelected = document.getElementById('color').value;
     firstName = document.getElementById('firstName').value;
     lastName = document.getElementById('lastName').value;
-    emailjs.send('service_qqf5p4q', 'template_ttckj0c', {
+     if (!firstName || !lastName || !colorSelected) {
+        alert('Please fill out all required fields.');
+        return;
+    }
+    emailjs.send('service_iob9a3n', 'template_jzqsi9o', {
         sender: `${firstName} ${lastName}`,
         note: document.getElementById('additionalInfo').value,
         item: ItemSelected,
@@ -102,7 +115,7 @@ function send() {
     setTimeout(() => {
         isRateLimited = false;
         localStorage.removeItem('rateLimited');
-    }, 300000); // 30 seconds
+    }, 30000); // 30 seconds
 }
 
 window.onload = function() {
@@ -111,7 +124,7 @@ window.onload = function() {
         setTimeout(() => {
             isRateLimited = false;
             localStorage.removeItem('rateLimited');
-        }, 300000 - (Date.now() - parseInt(localStorage.getItem('rateLimitedTime'))));
+        }, 30000 - (Date.now() - parseInt(localStorage.getItem('rateLimitedTime'))));
     }
     localStorage.setItem('rateLimitedTime', Date.now());
 }
