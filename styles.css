@@ -86,11 +86,29 @@ body {
     position: relative;
 }
 
+.new {
+    border: 2px solid #00ff08;
+    position: relative;
+    animation: borderAnimation 2s infinite;
+}
+
+.new::before {
+    content: "New!";
+    position: absolute;
+    top: 10%;
+    left: calc(100% - 38px);
+    background-color: #00ff08;
+    color: white;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .popular::before {
     content: "Popular!";
     position: absolute;
     top: 10%;
-    left: calc(100% - 68px);
+    left: calc(100% - 60px);
     background-color: #ffd500;
     color: white;
     padding: 2px 10px;
